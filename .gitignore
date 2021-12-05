@@ -4,5 +4,8 @@
 # Ignore Gradle build output directory
 build
 
-# Ignore the input file
+# Ignore Cargo build output directory
+/target
+
+# Ignore the input files
 input.txt
