@@ -8,4 +8,4 @@ build
 /target
 
 # Ignore the input files
-input.txt
+input*.txt
