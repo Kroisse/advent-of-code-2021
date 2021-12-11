@@ -9,6 +9,14 @@ pub fn solve(reader: &mut dyn io::BufRead) -> Result<(), crate::Error> {
 
     println!("Octopus flashes: {}", flashes);
 
+    let mut count = 100;
+    while !grid.slice(s![1..-1, 1..-1]).iter().all(|i| *i == 0) {
+        step(&mut grid);
+        count += 1;
+    }
+
+    println!("Octopus synchronize for {} steps", count);
+
     Ok(())
 }
 
