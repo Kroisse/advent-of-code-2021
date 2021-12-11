@@ -1,6 +1,6 @@
 package se.krois.aoc2021
 
-import se.krois.aoc2021.day10.solve
+import se.krois.aoc2021.day11.solve
 
 fun main() {
     solve()
