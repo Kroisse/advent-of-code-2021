@@ -1,13 +1,12 @@
 use std::io;
 
-pub fn solve() -> io::Result<()> {
-    let stdin = io::stdin();
+pub fn solve(reader: &mut dyn io::BufRead) -> io::Result<()> {
     let mut line = String::new();
     let mut syntax_error_score = 0;
     let mut completion_scores = Vec::new();
     loop {
         line.clear();
-        if stdin.read_line(&mut line)? <= 0 {
+        if reader.read_line(&mut line)? <= 0 {
             break;
         }
         match check(line.trim()) {
