@@ -49,8 +49,9 @@ fn step(grid: &mut Array2<u8>) -> usize {
     let mut flashes = vec![];
     let mut flashes_tail = 0;
 
+    let mut g = grid.slice_mut(s![1..-1, 1..-1]);
+    g += 1;
     for (ix, cell) in grid.indexed_iter_mut() {
-        *cell = cell.saturating_add(1);
         if *cell != 255 && *cell >= 10 {
             flashes.push(ix);
         }
